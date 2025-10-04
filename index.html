@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajude a Maria na luta contra o câncer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #d9534f;
+      color: white;
+      padding: 20px 10px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .pix-box {
+      background: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .pix-key {
+      font-size: 1.1em;
+      margin: 10px 0;
+      word-break: break-all;
+    }
+
+    .button-group {
+      margin-top: 20px;
+    }
+
+    .donate-button {
+      background-color: #d9534f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .donate-button:hover {
+      background-color: #c9302c;
+    }
+
+    .copy-btn {
+      background-color: #5cb85c;
+      margin-top: 10px;
+    }
+
+    .copy-btn:hover {
+      background-color: #4cae4c;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ajude a Maria na luta contra o câncer</h1>
+  </header>
+
+  <main>
+    <p>A Maria está precisando da sua ajuda para se recuperar. Sua contribuição pode fazer toda a diferença!</p>
+    <h2>Meta: R$10.000,00</h2>
+
+    <div class="pix-box">
+      <h3>Doe via PIX</h3>
+      <p>Chave PIX (e-mail):</p>
+      <div class="pix-key" id="pixKey">mariaaeduarda0771@gmail.com</div>
+      <button class="donate-button copy-btn" onclick="copiarPix()">Copiar Chave PIX</button>
+
+      <div class="button-group">
+        <h4>Escolha um valor para doar:</h4>
+        <button class="donate-button">R$10</button>
+        <button class="donate-button">R$25</button>
+        <button class="donate-button">R$50</button>
+        <button class="donate-button">R$100</button>
+        <button class="donate-button">Outro valor</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Obrigado por sua ajuda! 💖</p>
+  </footer>
+
+  <script>
+    function copiarPix() {
+      const pixKey = document.getElementById("pixKey").textContent;
+      navigator.clipboard.writeText(pixKey).then(() => {
+        alert("Chave PIX copiada!");
+      });
+    }
+  </script>
+</body>
+</html>
